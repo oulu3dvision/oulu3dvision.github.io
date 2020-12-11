@@ -1,0 +1,55 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Janne Heikkilä">
+   <meta name="GENERATOR" content="Mozilla/4.75 [en] (Win98; U) [Netscape]">
+   <title>Camera calibration toobox for Matlab</title>
+</head>
+<body background="tausta.gif">
+
+<h1>
+Camera calibration toolbox for Matlab</h1>
+<img SRC="calibr.gif" HSPACE=10 VSPACE=10 BORDER=0 height=89 width=122 align=LEFT>Modern
+CCD cameras are usually capable of a spatial accuracy greater than 1/50
+of the pixel size. However, such accuracy is not easily attained due to
+various error sources that can affect the image formation process. Current
+calibration methods typically assume that the observations are unbiased,
+the only error is the zero-mean independent and identically distributed
+random noise in the observed image coordinates, and the camera model completely
+explains the mapping between the 3D coordinates and the image coordinates.
+In general, these conditions are not met, causing the calibration results
+to be less accurate than expected.
+<p>The camera calibration toolbox for Matlab (version 3.0) utilizes a new
+<i>bias
+correction procedure for circular control points</i> and a nonrecursive
+method for <i>reversing the distortion model</i>. To learn more about the
+calibration method see [1].
+<p>The toolbox is freely available, and you can download it from here:
+<p><a href="http://www.ee.oulu.fi/~jth/calibr/calibr_v30.tar">calibr_v30.tar
+(103 k)</a> or
+<br><a href="http://www.ee.oulu.fi/~jth/calibr/calibr_v30.zip">calibr_v30.zip
+(32 k)</a>
+<p>For more information about installation, see the <a href="http://www.ee.oulu.fi/~jth/calibr/README">README</a>
+file.
+<p>The first version of the toolbox was released in Sept. 1996. For downloading
+it or the other old versions follow this <a href="http://www.ee.oulu.fi/~jth/calibr_old/">link</a>.
+<br>&nbsp;
+<p><b>Reference:</b>
+<p>[1]&nbsp; Heikkil&auml;, J, "Geometric Camera Calibration Using Circular
+Control Points", IEEE Transactions on Pattern Analysis and Machine Intelligence,
+Vol. 22, No. 10, pp. 1066-1077, Oct 2000.
+<p>
+<hr WIDTH="100%">
+<br>See also:
+<blockquote><a href="http://www.ee.oulu.fi/~jth/">My homepage</a>
+<br><a href="http://www.ee.oulu.fi/mvmp/">Machine Vision and Media Processing
+Unit</a>
+<br><a href="http://www.oulu.fi/">University of Oulu</a>
+<br><a href="http://www.ee.oulu.fi/">Department of Electrical Engineering</a></blockquote>
+
+<hr WIDTH="100%">
+<br>Last update 17 Oct 2000 by Janne Heikkil&auml;
+<!--tama_pois#exec cgi="addcounter.cgi" -->
+</body>
+</html>
