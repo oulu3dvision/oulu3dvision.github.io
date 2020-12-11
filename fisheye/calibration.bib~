@@ -1,0 +1,21 @@
+@Article{KannalaBrandt,
+author = {Kannala, J. and Brandt, S.~S.},	
+title = {A generic camera model and calibration method for conventional, wide-angle, and fish-eye lenses.},	
+year = {2006},	
+volume = {28},	
+pages = {1335--1340},	
+number = {8},	
+journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence}	
+}
+
+@incollection{KannalaHB08,
+  author    = {Juho Kannala and
+               Janne Heikkil{\"a} and
+               Sami S. Brandt},
+  title     = {Geometric Camera Calibration},
+  booktitle = {Wiley Encyclopedia of Computer Science and Engineering},
+  year      = {2008},
+  ee        = {http://dx.doi.org/10.1002/9780470050118.ecse589},
+  crossref  = {DBLP:reference/wiley/2008},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
+}

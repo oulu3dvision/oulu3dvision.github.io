@@ -1,0 +1,76 @@
+<td class="levea">
+<title>Camera Calibration Toolbox for Generic Lenses</title>
+<h3>Camera Calibration Toolbox for Generic Lenses</h3>
+<h4>Version 2</h4>
+
+<p> Copyright (C) 2004-2006 <a href="http://www.ee.oulu.fi/infolab/personnel/view.php?edit=15">Juho Kannala</a> &lt;<a href="mailto:jkannala@ee.oulu.fi">jkannala@ee.oulu.fi</a>&gt;<br />
+
+
+</p>
+
+    <h4>Introduction</h4>
+<p>
+This is a camera calibration toolbox for generic lenses. The toolbox can be used to calibrate conventional,
+wide-angle and fish-eye lens cameras. The calibration is based on viewing a planar calibration object.
+The intrinsic and extrinsic camera parameters are estimated from control point correspondences between
+the calibration plane and calibration images. This toolbox is a result of research that has been carried out
+in the <a href="http://www.lce.hut.fi/"> Laboratory of Computational Engineering</a> at the Helsinki University of Technology and in the <a href="http://www.ee.oulu.fi/mvg/">Machine Vision Group</a> at the University of Oulu.
+</p>
+
+    <h4>Changes to the first version</h4>
+
+    <p>The most important changes are:</p>
+    <ol>
+      <li>The calibration algorithm has changed. The current implementation works better for lenses having a field of view significantly over 180 degrees. 
+      </li>
+      <li>The interactive preprocessing step of calibration images has been improved. Now user may adjust the grayscale threshold that is used to extract the circular control points.
+      </li>
+    </ol>
+    <p>The first version is available <a href="http://www.lce.hut.fi/research/compinf/calibration/">here</a>.</p>
+
+    <h4>License</h4>
+    <p> This software is distributed under the GNU General Public License (version 2 or later); please refer to the file <a href="http://www.ee.oulu.fi/mvg/download/calibration/License.txt">License.txt</a>, included with the software, for details. </p>
+    <h4>Download</h4>
+    <p> Toolbox:  <a href="http://www.ee.oulu.fi/mvg/download/calibration/calibration_v22.tar.gz">calibration_v22.tar.gz</a> </p>
+
+    <p> Demo: <a href="http://www.ee.oulu.fi/mvg/download/calibration/fisheyedemo.tar.gz">fisheyedemo.tar.gz</a> </p>
+    <h4>Installation</h4>
+    <p> Copy all the m-files into a directory and add it to your MATLABPATH. Matlab version 6.5 or later with the Image Processing Toolbox and Optimization Toolbox is required.</p>
+    <p> To run the demo extract the data from the above package into a directory and execute function FISHEYEDEMO.</p>
+
+    <h4>Usage</h4>
+    <p> There are two ways of using the toolbox: </p>
+    <p> </p>
+    <ol>
+      <li> Given the point correspondences between the calibration plane and calibration images one may directly compute the camera parameters. 
+      </li>
+      <li> If a calibration pattern with circular control points is used, one may extract the centroids of the projected circles from the calibration images by using an interactive procedure. After this the camera parameters may be computed. </li>
+
+    </ol>
+    <p></p>
+    <p> For more instructions see the <a href="http://www.ee.oulu.fi/mvg/download/calibration/README">README</a> file. </p>
+    <h4>References</h4>
+    <p> </p>
+
+    <ol>
+    <li> Juho Kannala and Sami S. Brandt. <a href="http://www.ee.oulu.fi/mvg/download/calibration/Kannala_Brandt_calibration.pdf">A generic camera model and calibration method for conventional, wide-angle and fish-eye lenses.</a> <i>IEEE Transactions on Pattern Analysis and Machine Intelligence</i>, vol. 28, no. 8, August 2006. 
+      </li>
+    </ol> 
+
+<P class="lastmod"><?php;
+Print("Last modified:  ".date("d.m.Y",filemtime(__FILE__)));
+?>
+</P>
+</td>
+
+
+
+
+
+
+
+
+
+
+
+

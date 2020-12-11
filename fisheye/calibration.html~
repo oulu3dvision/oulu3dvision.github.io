@@ -1,0 +1,175 @@
+<html>
+
+<head>
+
+<style type="text/css">
+<!--
+
+h1
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: #184273;
+	font-weight: bold;
+	size: 100%;
+}
+
+h2
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: #184273;
+	font-weight: bold;
+	size: 100%;
+}
+
+h3
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: #184273;
+	font-weight: bold;
+	size: 100%;
+}
+
+.cat
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: #184273;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+body, td, th, tr
+{
+	font-family: Arial, Helvetica;
+	color: #000000;
+	font-weight: normal;
+	size: 100%;
+}
+
+A:link, A:visited
+{
+	font-family: Arial, Helvetica;
+	color: #000000;
+	font-weight: normal;
+	size: 100%;
+	text-decoration: underline;
+}
+
+A:hover, A:active
+{
+	font-family: Arial, Helvetica;
+	color: #FF0000;
+	font-weight: normal;
+	size: 100%;
+	text-decoration: underline;
+}
+
+.title
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: #ffffff;
+	font-weight: bold;
+	size: 100%;
+}
+
+//-->
+</style>
+
+
+<title>Camera Calibration Toolbox for Generic Lenses</title>
+</head>
+
+<body bgcolor="#ffffff">
+
+<center>
+<H2>Camera Calibration Toolbox for Generic Lenses</H2>
+</center>
+
+<br>
+
+<h3>Version 2</h3>
+
+<p> Copyright (C) 2004-2008 <a href="http://www.ee.oulu.fi/infolab/personnel/view.php?edit=15">Juho Kannala</a> &lt;<a href="mailto:jkannala@ee.oulu.fi">jkannala@ee.oulu.fi</a>&gt;<br />
+<br> Last updated: 2013-03-03 (Changed the software under the MIT open source license.)</p> 
+
+
+    <h3>Introduction</h3>
+<p>
+This is a camera calibration toolbox for Matlab which can be used for calibrating several different kinds of central cameras. A central camera is a camera which has a single effective viewpoint. The toolbox has been successfully used for both conventional and omnidirectional cameras such as fish-eye lens cameras and catadioptric cameras. The calibration is based on viewing a planar calibration object. The intrinsic and extrinsic camera parameters are estimated from control point correspondences between the calibration plane and calibration images. This toolbox is a result of research that has been carried out in the <a href="http://www.lce.hut.fi/"> Laboratory of Computational Engineering</a> at the Helsinki University of Technology and in the <a href="http://www.ee.oulu.fi/mvg/">Machine Vision Group</a> at the University of Oulu.
+</p>
+
+    <h3>Changes to the first version</h3>
+
+    <p>The most important changes are:</p>
+    <ol>
+      <li>The calibration algorithm has changed. The current implementation works better for lenses having a field of view significantly over 180 degrees.
+      </li>
+      <li>The interactive preprocessing step of calibration images has been improved. Now user may adjust the grayscale threshold that is used to extract the circular control points.
+      </li>
+    </ol>
+    <p>The first version is available <a href="http://www.lce.hut.fi/research/compinf/calibration/">here</a>.</p>
+
+    <h3>License</h3>
+    <p> This software is distributed under the MIT License; refer to the file <a href="License.txt">License.txt</a>, for details. </p>
+ 
+ <p> Please use the following <a href="calibration.bib">citations</a> if you use this software in your work. </p>
+ 
+   <h3>Download</h3>
+    <p> Toolbox: 
+ <a href="calibration_v23.tar.gz">calibration_v23.tar.gz</a>
+ <a href="calibration_v22.tar.gz">(calibration_v22.tar.gz)</a> </p>
+
+    <p> Demo: <a href="fisheyedemo.tar.gz">fisheyedemo.tar.gz</a> </p>
+    <h3>Installation</h3>
+    <p> Copy all the m-files into a directory and add it to your MATLABPATH. Matlab version 6.5 or later with the Image Processing Toolbox and Optimization Toolbox is required.</p>
+    <p> To run the demo extract the data from the above package into a directory and execute function FISHEYEDEMO.</p>
+
+    <h3>Usage</h3>
+    <p> There are two ways of using the toolbox: </p>
+    <p> </p>
+    <ol>
+      <li> Given the point correspondences between the calibration plane and calibration images one may directly compute the camera
+parameters.
+      </li>
+      <li> If a calibration pattern with circular control points is used, one may extract the centroids of the projected circles from the calibration images by using an interactive procedure. After this the camera parameters may be computed. </li>
+
+    </ol>
+    <p></p>
+    <p> For more instructions see the <a href="README">README</a> file. </p>
+
+   <h3>Calibration Pattern</h3>
+   
+<p>You can use either one of the following two calibration patterns which have aspect ratios <a href="calibrationpattern_aspectratio_16_9.pdf">16:9</a> and <a href="calibrationpattern_aspectratio_4_3.pdf">4:3</a>. For example, you can display the pattern on a flat screen display by using the full screen viewing mode of Acrobat Reader. The necessary distance ratios are given in the following <a href="calibconfig.m">configuration file</a>. (The absolute metric dimensions of the displayed pattern are not necessary for the internal camera calibration. In this case, only the ratio between the control point radius and the gap of neighboring control points is significant. Optionally, in order to speed up the computation, you can use the pointlike approximation and set the radius of the control points to zero.)   </p>
+ 
+   
+  
+
+    <h3>Examples</h3>
+
+Below there are two images of a planar calibration pattern taken with two different cameras. By using the calibrated values for the internal camera parameters both original images in the left are backprojected on the face of a cube whose centroid is at the viewpoint of the camera. The results of these warpings are shown on the right below and it can be seen that the scene lines are straight in the warped images. (The mapping from the calibration plane onto the cube is a central projection which preserves lines.) 
+<p>
+Catadioptric camera:
+<center>
+<img src="kaidanbh.png" height=200>
+</center>
+</p>
+<p>
+Wide-angle lens camera:
+<center>
+<img src="sonyb2h.png" height=200>
+</center>
+</p>
+
+    <h3>References</h3>
+    <p> </p>
+
+    <ol>
+    <li> Juho Kannala and Sami S. Brandt. <a href="Kannala_Brandt_calibration.pdf">A
+generic camera model and calibration method for conventional, wide-angle and fish-eye lenses.</a> <i>IEEE Transactions on Pattern Analysis and Machine Intelligence</i>, vol. 28, no. 8, August 2006.
+     <li> Juho Kannala, Janne Heikkilä and Sami S. Brandt.  <a href="../publications/preprintECEWiley2008.pdf"> Geometric camera 
+calibration.</a> <i>Wiley Encyclopedia of Computer Science and Engineering, 2008</i>.
+      </li>
+    </ol>
+<br>
+
+</body>
+</html>
